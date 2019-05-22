@@ -1,5 +1,9 @@
 from sys import exit
 import http.client, urllib.parse, json, time, sys
+
+
+
+
 class EchoBot():
     async def on_turn(self, context):
         # Check to see if this activity is an incoming message.
@@ -19,7 +23,7 @@ class EchoBot():
             host = "qnamakerbotproject-ml.azurewebsites.net";
             # Authorization endpoint key
             # From Publish Page
-           # endpoint_key = <INSERT KEY> ;
+            endpoint_key = "88d3076a-cce4-457e-9f86-2e9652288e4e" ;
 
             # Management APIs postpend the version to the route
             # Part of HOST is prepended to route to work with http library
@@ -33,7 +37,7 @@ class EchoBot():
                 'Content-Type': 'application/json'
               }
 
-            conn = http.client.HTTPSConnection(host,port=443)
+            conn = http.client.HTTPSConnection(host, port=443)
             try:
 
                 conn.request ("POST", route, question, headers)
@@ -42,9 +46,12 @@ class EchoBot():
 
                 answer = response.read ()
 
-                print(json.dumps(json.loads(answer), indent=4))
+                # extract response from json and only prints the answer
+                format = json.dumps(json.loads(answer))
+                resp_index_start = format.index('"answer":') + len('"answer: ""')
+                resp_index_end = format.index('", "score":')
+                print(format[resp_index_start:resp_index_end])
 
             except :
                 print ("Unexpected error:", sys.exc_info()[0])
                 print ("Unexpected error:", sys.exc_info()[1])
-# hiiiiiiiii
