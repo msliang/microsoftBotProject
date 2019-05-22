@@ -19,7 +19,7 @@ class EchoBot():
             host = "qnamakerbotproject-ml.azurewebsites.net";
             # Authorization endpoint key
             # From Publish Page
-            endpoint_key = <INSERT KEY> ;
+           # endpoint_key = <INSERT KEY> ;
 
             # Management APIs postpend the version to the route
             # Part of HOST is prepended to route to work with http library
@@ -47,3 +47,4 @@ class EchoBot():
             except :
                 print ("Unexpected error:", sys.exc_info()[0])
                 print ("Unexpected error:", sys.exc_info()[1])
+# hiiiiiiiii
