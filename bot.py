@@ -23,7 +23,7 @@ class EchoBot():
             host = "qnamakerbotproject-ml.azurewebsites.net";
             # Authorization endpoint key
             # From Publish Page
-            endpoint_key = "88d3076a-cce4-457e-9f86-2e9652288e4e" ;
+            #endpoint_key = <Endpoint Keys> ;
 
             # Management APIs postpend the version to the route
             # Part of HOST is prepended to route to work with http library
